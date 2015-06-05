@@ -1,0 +1,57 @@
+<head>
+  <title>HabitatForHumanityApp</title>
+</head>
+
+<!-- HTML input -->
+<body>
+<div ng-controller="DemoCtrl" layout="column">
+  <md-content layout-padding class="autoScroll">
+
+    <md-input-container class="md-icon-float" >
+      <!-- Use floating label instead of placeholder -->
+      <label>Name</label>
+      <md-icon md-svg-src="img/icons/ic_person_24px.svg" class="name"></md-icon>
+      <input ng-model="user.name" type="text">
+      <div ng-messages="user.name.$error">
+          <div ng-message="required">This is required.</div>
+      </div>
+    </md-input-container>
+
+    <md-input-container >
+      <!-- Use floating placeholder instead of label -->
+      <md-icon md-svg-src="img/icons/ic_email_24px.svg" class="email"></md-icon>
+      <input ng-model="user.email" type="email" placeholder="Email (required)" ng-required="true">
+      <div ng-messages="user.email.$error">
+          <div ng-message="required">This is required.</div>
+      </div>
+    </md-input-container>
+
+    <md-input-container >
+      <!-- Use floating placeholder instead of label -->
+      <md-icon md-svg-src="img/icons/ic_email_24px.svg" class="email"></md-icon>
+      <input ng-model="user.email" type="email" placeholder="Confirm email address (required)" ng-required="true">
+      <div ng-messages="user.email.$error">
+          <div ng-message="required">This is required.</div>
+      </div>
+    </md-input-container>
+
+    <md-input-container md-no-float>
+      <md-icon md-svg-src="img/icons/ic_place_24px.svg" style="display:inline-block;"></md-icon>
+      <input ng-model="user.chapter" type="text" placeholder="Chapter" >
+      <md-select name="myModel" placeholder="Pick" ng-model="myModel" required>
+        <md-option value="1">Chapter 1</md-option>
+        <md-option value="2">Chapter 2</md-option>
+      </md-select>
+      <div ng-messages="user.chapter.$error">
+          <div ng-message="required">This is required.</div>
+      </div>
+    </md-input-container>
+
+    <div layout="row">
+      <md-button ng-click="clearValue()" ng-disabled="!myModel" style="margin-right: 20px;">Clear</md-button>
+      <md-button ng-click="save()" ng-disabled="myForm.$invalid" class="md-primary" layout layout-align="center end">Save</md-button>
+    </div>
+
+  </md-content>
+</div>
+</body>
