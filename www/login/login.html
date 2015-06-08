@@ -5,6 +5,7 @@
 <body>
 <div ng-controller="DemoCtrl" layout="column">
   <md-content layout-padding class="autoScroll">
+
     <md-input-container >
       <!-- Use floating placeholder instead of label -->
       <md-icon md-svg-src="img/icons/ic_email_24px.svg" class="email"></md-icon>
@@ -14,7 +15,7 @@
       </div>
     </md-input-container>
 
-    <md-input-container>
+	<md-input-container>
       <!-- Use floating placeholder instead of label -->
       <md-icon md-svg-src="img/icons/ic_lock_24px.svg" class="password"></md-icon>
       <input ng-model="user.password" type="password" placeholder="Enter password" ng-required="true">
@@ -22,12 +23,12 @@
           <div ng-message="required">This is required.</div>
       </div>
   </md-input-container>
-  </md-content>
-</div>
 
     <div layout="row">
       <md-button class="btn1"> Cancel </md-button>
       <md-button class="btn1"> Log In </md-button>
     </div>
 
+  </md-content>
+</div>
 </body>
