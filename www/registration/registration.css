@@ -18,3 +18,7 @@
   color : rgb(187, 187, 187);
   background-color: rgba(230, 230, 229, 0.96); }
 }
+.whiteframedemoBasicUsage md-whiteframe {
+  background: #fff;
+  margin: 20px;
+  padding: 20px; }
