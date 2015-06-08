@@ -1,3 +1,4 @@
+if (Meteor.isClient) {
 angular
   .module('sidenavDemo1', ['ngMaterial'])
   .controller('AppCtrl', function ($scope, $timeout, $mdSidenav, $mdUtil, $log) {
@@ -34,3 +35,4 @@ angular
         });
     };
   });
+}
