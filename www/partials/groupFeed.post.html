@@ -2,7 +2,7 @@
 <ion-content>
 <ion-nav-buttons side='right'>
     <button class="button button-dark" ng-click="updatePosts()"><i class="icon ion-refresh"></i></button>
-    <button class="button button-dark" ng-click="addPost()"> <i class="icon ion-plus-round"> </i> </button>
+    <button class="button button-dark" ng-hide="aManager" ng-click="addPost()"> <i class="icon ion-plus-round"> </i> </button>
 </ion-nav-buttons>
 <div class="item" ng-show="posts.length == 0 || posts === undefined">
     <center>

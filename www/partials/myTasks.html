@@ -19,7 +19,7 @@
     <div class="list card" ng-repeat="group in groups">
         <center>
                 <img height="50px" src="img/group_feed.icon.png"/>
-                <h4>{{group.name}} ({{groupedTask.length}} task<span ng-hide="groupedTask.length <2">s</span>)<h2>
+                <h4>{{isTaskManager}}{{group.name}} ({{groupedTask.length}} task<span ng-hide="groupedTask.length <2">s</span>)<h2>
         </center>
         <div class="item item-grouped" ng-repeat="task in groupedTask = (tasks | filter:{group_id: group.id})">
             <div class="item item-avatar item-icon-right" ng-click="viewTask(task.id)">

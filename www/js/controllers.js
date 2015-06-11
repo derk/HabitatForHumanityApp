@@ -84,6 +84,9 @@ vmaControllerModule.controller('registerCtrl', ['$scope', '$state', 'Auth', 'ngN
             Auth.clearCredentials();
         }
     }
+    $scope.bike = function() {
+        console.log("bike");
+    }
 }]);
 
 vmaControllerModule.controller('settings', ['$scope', '$state', 'Auth', '$ionicModal', '$ionicPopup', function($scope, $state, Auth, $ionicModal, $ionicPopup) {
@@ -269,6 +272,13 @@ vmaControllerModule.controller('postController', ['$scope', '$state', 'vmaPostSe
             $scope.post = success;
         });
     };
+    //PERMISSIONS
+//    vmaPostService.getMetaPosts()
+//        .then(function(data){
+//             var temp = $filter('getById')(data, $scope.id);
+//            console.log(data);
+//        }, function(error){
+//        });
 
     //OPEN ADD FUNCTION AND DELETE
     $scope.addPost = function() {
@@ -425,6 +435,7 @@ vmaControllerModule.controller('groupController', ['$scope', '$state', '$ionicMo
     $scope.addGroup = function() {
         $scope.openAdd();
     };
+    $scope.isGroupManager = vmaGroupService;
     $scope.openAdd = function () {
         // callback for ng-click 'modal'- open Modal dialog to add a new course
         $ionicModal.fromTemplateUrl('partials/addGroup.html', {
@@ -622,7 +633,6 @@ vmaControllerModule.controller('groupController', ['$scope', '$state', '$ionicMo
             return true;
         }
     };
-
     $scope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams){
         if($scope.modal && $scope.modal.isShown()) {
             event.preventDefault();
@@ -808,6 +818,7 @@ vmaControllerModule.controller('taskController', ['$scope', '$state', '$ionicMod
         promise.then(function(success) {
                 $scope.updateTasks();
                 ngNotify.set("Task joined successfully", "success");
+            $scope.join_task = true;
             }, function(fail) {
                 ngNotify.set(fail.data.message, 'error');
         });
@@ -819,6 +830,7 @@ vmaControllerModule.controller('taskController', ['$scope', '$state', '$ionicMod
         promise.then(function(success) {
                 $scope.updateTasks();
                 ngNotify.set("Task left successfully", "success");
+            $scope.join_task = false;
             }, function(fail) {
                 ngNotify.set(fail.data.message, 'error');
         });
@@ -915,6 +927,13 @@ vmaControllerModule.controller('taskController', ['$scope', '$state', '$ionicMod
         }
         return ionicActionArray;
     };
+        vmaTaskService.getMetaTasks()
+        .then(function(data){
+//             var temp = $filter('getById')(data, $scope.group_id);
+////            $scope.is2Manager = temp.isManager;
+//            console.log(temp);
+        }, function(error){
+        });
 
     //PERMISSION SHOW CHECK
     $scope.actionCount = function(id) {
@@ -959,7 +978,16 @@ vmaControllerModule.controller('taskController', ['$scope', '$state', '$ionicMod
             return true;
         };
     };
+    //PERMISSIONS
+        vmaGroupService.getMetaJoinedGroups()
+        .then(function(data){
+             var temp = $filter('getById')(data, $scope.id);
+            $scope.aManager = temp.isManager;
 
+        }, function(error){
+        });
+
+    
     $scope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams){
         if($scope.modal && $scope.modal.isShown()) {
             $scope.modal.remove();

@@ -18,7 +18,7 @@
             <select ng-model="entry.name" required>
                 <option>Choose a task</option>
                 <option ng-repeat="task in joinTasks">{{task.name}}</option>
-                <option>Other</option>
+<!--                <option>Other</option>-->
             </select>
         </label>
         <label ng-hide="entry.name == 'Choose a task'">

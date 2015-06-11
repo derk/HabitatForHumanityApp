@@ -15,8 +15,8 @@
     <div class="list card">
         <div class="item item-button-right" ng-repeat="task in tasks">
             <div> <a ng-click="viewTask(task.id)">{{task.name}}</a> </div>
-            <button ng-hide="task.joined" class="button button-dark" ng-click="joinTask(task.id)">Join</button>
-            <button ng-show="task.joined" class="button button-dark" ng-click="leaveTask(task.id)">Joined</button>
+            <button ng-hide="join_task" class="button button-dark" ng-click="joinTask(task.id)">Attend</button>
+            <button ng-show="join_task" class="button button-dark" ng-click="leaveTask(task.id)">Attending</button>
         </div>
     </div>
 </ion-content>

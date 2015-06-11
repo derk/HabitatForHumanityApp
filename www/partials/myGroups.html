@@ -1,7 +1,7 @@
 <ion-view title="My Groups">
 <ion-content>
 <ion-nav-buttons side='right'>
-    <button class="button button-dark" ng-click="addGroup()"> <i class="icon ion-plus-round"> </i> </button>
+<!--    <button class="button button-dark" ng-click="addGroup()"> <i class="icon ion-plus-round"> </i> </button>-->
     <!--<button class="button button-dark" ng-click="updatePosts()"><i class="icon ion-refresh"></i></button>-->
 </ion-nav-buttons>
 <ion-nav-buttons side='right'>
@@ -15,22 +15,24 @@
 </div> -->
 <div class="item" ng-show="groups.length > 0">
     <center>
-            You are in {{groups.length}} group<span ng-hide="groups.length <2">s</span>
+<!--            There <span ng-hide="groups.length >=2">is </span><span ng-hide="groups.length <2">are</span> {{groups.length}} build site<span ng-hide="groups.length <2">s</span> in your chapter.-->
+                   {{groups.length}} Chapter<span ng-hide="groups.length <2">s</span>
     </center>
 </div>
 <div class="list card" ng-repeat="group in groups">
     <div class="item item-avatar" ng-click="viewGroup(group.id)">
+<!--    <div class="item item-avatar" ng-click="aManager(group.id)">-->
         <img id="groupfeed" src="img/group_feed.icon.png"/>
         <h2> {{group.name}}</h2>
     </div>
     <div class="item tabs tabs-secondary tabs-icon-left">
         <a class="tab-item" ui-sref="secure.group.posts({id: group.id})">
             <i class="icon ion-chatbox"></i>
-            View Posts
+            News
         </a>
         <a class="tab-item" ui-sref="secure.group.tasks({id: group.id})">
             <i class="icon ion-ios7-people"></i>
-            View Tasks
+            View Build Sites
         </a>
         <a class="tab-item" ng-click="showActions(group.id, $event)" ng-show="actionCount(group.id)">
             <i class="icon ion-ios7-more"></i>
