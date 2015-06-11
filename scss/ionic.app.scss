@@ -1,0 +1,161 @@
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:
+
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #4a87ee !default;
+$calm:                            #43cee6 !default;
+$balanced:                        #66cc33 !default;
+$energized:                       #f0b840 !default;
+$assertive:                       #ef4e3a !default;
+$royal:                           #8a6de9 !default;
+$dark:                            #444 !default;
+*/
+$dark:                            #00b388;
+$uhcolor:                         #c8102e;
+$radius:						  18px;
+// .item.item-input {
+// 	background-color: $dark !important;
+// }
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+// Include all of Ionic
+@import "www/bower_components/ionic/scss/ionic";
+ion-header-bar.bar-dark.bar-subheader.bar.bar-header.disable-user-behavior>label>input {
+	background-color: transparent;
+}
+label.item-input-wrapper {
+	background-color: transparent;
+}
+input::-webkit-input-placeholder {
+  color: #8D8D8D ;
+}
+input:-moz-placeholder {
+  color: #8D8D8D ;
+}
+input:-ms-input-placeholder { /* IE10+ */
+  color: #8D8D8D ;
+}
+ion-footer-bar {
+	border: none;
+}
+.item-select {
+	select {
+		position: relative !important;	
+		display: block;
+		padding: initial !important;
+		direction: initial !important;
+		white-space: initial !important;
+	}
+}
+.button.button-dark:hover, .button-dark.button.active, .button-dark.button.activated {
+	color: white;
+	background-color: #00CAA3;
+}
+.button {
+	border-radius: $radius;
+	border: none !important;
+}
+.button-full.submit {
+	background-color: $dark;
+	border: none !important;
+	width: 60%;
+	margin: auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	border-radius: $radius;
+}
+.checkin, .checkout {
+	background-color: white !important;
+	color: $dark !important;
+}
+.list.dark {
+	li a {
+		border: none;
+		background-color: transparent;
+		color: white;
+	}
+	li>a.item.active {
+		border-left: 8px solid $uhcolor;
+		background-color: rgb(71,84,103);
+	}
+}
+.search {
+	padding-left: 10px !important;
+}
+img.item, .item {
+	border: none;
+}
+.item-grouped {
+	background-color: transparent;
+}
+.item.item-avatar.item-icon-right {
+	// background-color: #39C09F;
+	border: 1px solid #f6f7f8;
+}
+div {
+	.item-body {
+		border-top: none;
+	}
+	.item-avatar {
+		border-bottom: none;
+	}
+	.list.card, .list.card>div {
+		border: none;
+	}
+}
+.list:last-child.card {
+	margin-bottom: 0px !important;
+}
+.item-grouped, .item-divider,.bar.bar-dark  {
+	border: none !important;
+}
+ion-side-menu-content ion-content.scroll-content.ionic-scroll.has-header:last-child {
+	background-color: rgb(246,246,246);
+}
+ion-side-menu>ion-nav-view>ion-view>ion-content {
+	background-color: rgb(74,89,109);
+}
+.card .item:first-child, .list-inset .item:first-child, .padding > .list .item:first-child {
+	// border-top-left-radius: 8px;
+	// border-top-right-radius: 8px;
+}
+.card .item:last-child, .list-inset .item:last-child, .padding > .list .item:last-child {
+	// border-bottom-left-radius: 8px;
+	// border-bottom-right-radius: 8px;
+	background-color: transparent;
+	// background-color: rgb(246,247,248);
+}
+div.item.tabs.tabs-secondary.tabs-icon-left {
+	background-color: rgb(246,247,248);
+}
+ion-header-bar.bar-dark.bar-subheader.bar.bar-header.disable-user-behavior {
+	padding-left: 8px;
+	padding-right: 8px;
+	padding-bottom: 45px;
+}
+ion-nav-bar {
+	border: none !important;
+}
+// .item-avatar > img:first-child, .item-avatar .item-image, .item-avatar .item-content > img:first-child, .item-avatar .item-content .item-image, .item-avatar-left > img:first-child, .item-avatar-left .item-image, .item-avatar-left .item-content > img:first-child, .item-avatar-left .item-content .item-image {
+// 	width: 54px !important;
+// 	height: 54px !important;
+// }
+.modal {
+	bottom: auto !important;
+}
+ion-modal-view>div {
+	padding-top: 45px;
+}
+ion-modal-view>div>.item-input>input {
+	border-bottom: 1px solid #f7f7f7 !important;
+}
+ion-content.scroll-content.ionic-scroll.has-header {
+	min-height: initial !important;
+}
+
+// bar-dark bar bar-header nav-bar nav-title-slide-ios7 disable-user-behavior  no-animation
