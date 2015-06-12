@@ -14,13 +14,19 @@
         <label class="item item-input">
             <input class="item item-input" type="password" ng-model="$parent.confirm.password" placeholder="Confirm Password">
         </label>
-        Minor?:<div></div>
-        <input type="checkbox" value="Bike">Yes      <input type="checkbox" value="Bike"> No<br><br>
+        <div class="card">
+  <div class="item item-text-wrap">
+    TERMS AND CONDITIONS.
+    
+  </div>
+</div>
+        <div></div>
+        <input style="width:100px; height:20px;" type="radio" ng-model="Bike" value="yes"/>     AGREE<br/>
      </label>
   </li>
                 
         <div>
-            <button type="submit" class="button button-block button-dark submit">Submit</button>
+            <button ng-if="Bike" type="submit" class="button button-block button-dark submit">Submit</button>
         </div>
     </form>
 </div>
