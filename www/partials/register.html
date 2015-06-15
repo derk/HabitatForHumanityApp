@@ -4,36 +4,30 @@
 </ion-nav-bar>
 <ion-content>
 <div class="container-fluid">
-    <form class="list list-inset" name="registerform">
-        <!-- Name -->
-        <label class="item item-input">
-            <input class="item item-input" type="name" ng-model="$parent.register.Name" placeholder="Name">
-        </label>
-        <!-- Email-->
+    <form class="list list-inset" name="registerform" ng-submit="registerUser()">
         <label class="item item-input">
             <input class="item item-input" type="email" ng-model="$parent.register.username" placeholder="E-Mail">
         </label>
-        <!-- Phone number -->
-        <label class="item item-input">
-            <input class="item item-input" type="number" ng-model="$parent.register.phoneNumber" placeholder="Phone Number">
-        </label>
-        <!-- Chapter -->
-        <label class="item item-input">
-            <input class="item item-input" type="name" ng-model="$parent.register.chapter_name" placeholder="Chapter">
-        </label>
-        <!-- Password -->
         <label class="item item-input">
             <input class="item item-input" type="password" ng-model="$parent.password.password" placeholder="Password">
         </label>
-        <!-- Password Confirmation-->
         <label class="item item-input">
             <input class="item item-input" type="password" ng-model="$parent.confirm.password" placeholder="Confirm Password">
         </label>
-        Are you a minor?
-        <input type="checkbox" value="Bike">Yes      <input type="checkbox" value="Bike">No
+        <div class="card">
+  <div class="item item-text-wrap">
+    TERMS AND CONDITIONS.
+    
+  </div>
+</div>
+        <div></div>
+        <input style="width:100px; height:20px;" type="radio" ng-model="Bike" value="yes"/>     AGREE<br/>
      </label>
-            <!-- if form is invalid ng-submit will handle it -->
-            <button type="submit" ng-submit="registerUser()" class="button button-block button-dark submit">Submit</button>
+  </li>
+                
+        <div>
+            <button ng-if="Bike" type="submit" class="button button-block button-dark submit">Submit</button>
+        </div>
     </form>
 </div>
 </ion-content>

@@ -4,6 +4,11 @@
         <button class="button button-clear button-primary" ng-click="modal.hide()">Cancel</button>
     </ion-header-bar>
         <div class="">
+              <label class=" item-input">
+                <textarea ng-model="$parent.post.title" placeholder="Title Name" rows="2" required></textarea>
+              </label>
+            </div>
+        <div class="">
           <label class=" item-input">
             <textarea ng-model="$parent.post.content" placeholder="Post Content" rows="5" required></textarea>
           </label>

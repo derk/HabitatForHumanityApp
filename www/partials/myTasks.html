@@ -1,4 +1,4 @@
-<ion-view title="My Tasks">
+<ion-view title="My Dates">
 <ion-nav-buttons side='right'>
     <button class="button button-dark" ng-click="updateTasks(true)"><i class="icon ion-refresh"></i></button>
 </ion-nav-buttons>
@@ -13,7 +13,7 @@
     </div>
     <div class="item" ng-show="tasks.length > 0">
         <center>
-            You have {{tasks.length}} task<span ng-hide="tasks.length <2">s</span><br>in {{groups.length}} group<span ng-hide="groups.length <2">s</span>
+            You have {{tasks.length}} date<span ng-hide="tasks.length <2">s</span><br>in {{groups.length}} chapter<span ng-hide="groups.length <2">s</span>
         </center>
     </div>
     <div class="list card" ng-repeat="group in groups">

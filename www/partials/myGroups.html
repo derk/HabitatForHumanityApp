@@ -1,7 +1,7 @@
-<ion-view title="My Groups">
+<ion-view title="My Joined Chapters">
 <ion-content>
 <ion-nav-buttons side='right'>
-<!--    <button class="button button-dark" ng-click="addGroup()"> <i class="icon ion-plus-round"> </i> </button>-->
+    <button class="button button-dark" ng-click="addGroup()"> <i class="icon ion-plus-round"> </i> </button>
     <!--<button class="button button-dark" ng-click="updatePosts()"><i class="icon ion-refresh"></i></button>-->
 </ion-nav-buttons>
 <ion-nav-buttons side='right'>
@@ -24,6 +24,7 @@
 <!--    <div class="item item-avatar" ng-click="aManager(group.id)">-->
         <img id="groupfeed" src="img/group_feed.icon.png"/>
         <h2> {{group.name}}</h2>
+        <p> Location: {{group.description}}</p>
     </div>
     <div class="item tabs tabs-secondary tabs-icon-left">
         <a class="tab-item" ui-sref="secure.group.posts({id: group.id})">

@@ -991,7 +991,9 @@ vmaControllerModule.controller('taskController', ['$scope', '$state', '$ionicMod
         vmaGroupService.getMetaJoinedGroups()
         .then(function(data){
              var temp = $filter('getById')(data, $scope.id);
-            $scope.aManager = temp.isManager;
+            if(temp){
+                $scope.aManager = temp.isManager;
+            }
 
         }, function(error){
         });

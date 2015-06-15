@@ -251,10 +251,10 @@ run(['Restangular', '$rootScope', 'Auth', '$q', '$state', 'vmaUserService', 'ngN
     };
 
     $rootScope.badgeConfig = [
-        "Badge 1",
-        "Badge 2",
-        "Badge 3",
-        "Badge 4",
+        "Service",
+        "Advocacy",
+        "Fundraising",
+        "Education",
         "General"
     ];
 
