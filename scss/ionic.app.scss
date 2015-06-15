@@ -38,7 +38,7 @@ input:-moz-placeholder {
   color: #8D8D8D ;
 }
 input:-ms-input-placeholder { /* IE10+ */
-  color: #8D8D8D ;
+  color: #8D8D8D ; //medium gray
 }
 ion-footer-bar {
 	border: none;
@@ -54,7 +54,7 @@ ion-footer-bar {
 }
 .button.button-dark:hover, .button-dark.button.active, .button-dark.button.activated {
 	color: white;
-	background-color: #00CAA3;
+	background-color: #00CAA3; Strong red
 }
 .button {
 	border-radius: $radius;
@@ -81,7 +81,7 @@ ion-footer-bar {
 	}
 	li>a.item.active {
 		border-left: 8px solid $uhcolor;
-		background-color: rgb(71,84,103);
+		background-color: rgb(71,84,103); //Very dark grayish blue
 	}
 }
 .search {
@@ -94,8 +94,8 @@ img.item, .item {
 	background-color: transparent;
 }
 .item.item-avatar.item-icon-right {
-	// background-color: #39C09F;
-	border: 1px solid #f6f7f8;
+	// background-color: #39C09F; //Moderate cyan
+	border: 1px solid #f6f7f8; //Light grayish blue
 }
 div {
 	.item-body {
@@ -115,10 +115,10 @@ div {
 	border: none !important;
 }
 ion-side-menu-content ion-content.scroll-content.ionic-scroll.has-header:last-child {
-	background-color: rgb(246,246,246);
+	background-color: rgb(246,246,246); //Very light gray (mostly white)
 }
 ion-side-menu>ion-nav-view>ion-view>ion-content {
-	background-color: rgb(74,89,109);
+	background-color: rgb(74,89,109); //Very dark grayish blue
 }
 .card .item:first-child, .list-inset .item:first-child, .padding > .list .item:first-child {
 	// border-top-left-radius: 8px;
@@ -128,10 +128,10 @@ ion-side-menu>ion-nav-view>ion-view>ion-content {
 	// border-bottom-left-radius: 8px;
 	// border-bottom-right-radius: 8px;
 	background-color: transparent;
-	// background-color: rgb(246,247,248);
+	// background-color: rgb(246,247,248); //Light grayish blue
 }
 div.item.tabs.tabs-secondary.tabs-icon-left {
-	background-color: rgb(246,247,248);
+	background-color: rgb(246,247,248); //Light grayish blue
 }
 ion-header-bar.bar-dark.bar-subheader.bar.bar-header.disable-user-behavior {
 	padding-left: 8px;
@@ -152,7 +152,7 @@ ion-modal-view>div {
 	padding-top: 45px;
 }
 ion-modal-view>div>.item-input>input {
-	border-bottom: 1px solid #f7f7f7 !important;
+	border-bottom: 1px solid #f7f7f7 !important; //Very light gray (mostly white)
 }
 ion-content.scroll-content.ionic-scroll.has-header {
 	min-height: initial !important;
