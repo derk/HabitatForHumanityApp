@@ -16,6 +16,9 @@ vmaControllerModule.controller('loginCtrl', ['$scope', 'Auth', '$state', 'ngNoti
              Auth.setCredentials($scope.userName, $scope.passWordHashed);
              $scope.userName = '';
              $scope.passWord = '';
+             $scope.Name = '';
+             $scope.phoneNumber = '';
+             $scope.chapter_name = '';
              $scope.loginResultPromise = $scope.Restangular().all("users").all("myUser").getList();
              $scope.success = false;
              $scope.loginResultPromise.then(function(result) {
@@ -56,13 +59,19 @@ vmaControllerModule.controller('registerCtrl', ['$scope', '$state', 'Auth', 'ngN
         if(!$scope.register || !$scope.password || !$scope.confirm){
             ngNotify.set("Please fill out all fields!", {position: 'top', type: 'error'});
         } else if($scope.register.username === "" || $scope.register.username === undefined){
-            ngNotify.set("Username is required!", {position: 'top', type: 'error'});
+            ngNotify.set("Valid username is required!", {position: 'top', type: 'error'});
         } else if($scope.password.password === "" || $scope.password.password === undefined) {
-            ngNotify.set("Password is required!", {position: 'top', type: 'error'});
+            ngNotify.set("Valid password is required!", {position: 'top', type: 'error'});
         } else if($scope.confirm.password === "" || $scope.confirm.password === undefined) {
-            ngNotify.set("Please enter password confirmation!", {position: 'top', type: 'error'});
+            ngNotify.set("Please enter valid password confirmation!", {position: 'top', type: 'error'});
         } else if($scope.password.password !== $scope.confirm.password){
             ngNotify.set("Passwords must match!", {position: 'top', type: 'error'});
+        } else if($scope.register.Name === "" || $scope.register.Name === undefined){
+            ngNotify.set("Valid name is required!", {position: 'top', type: 'error'});
+        } else if($scope.register.phoneNumber === "" || $scope.register.phoneNumber === undefined){
+            ngNotify.set("Valid phone number is required!", {position: 'top', type: 'error'});
+        } else if($scope.register.chapter_name === "" || $scope.register.chapter_name === undefined){
+            ngNotify.set(" Valid chapter is required!", {position: 'top', type: 'error'});
         } else {
             Auth.setCredentials("Visitor", "test");
             $scope.salt = "nfp89gpe";
