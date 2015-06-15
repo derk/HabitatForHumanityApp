@@ -8,8 +8,8 @@
     <form class="list" name="registerform">
         <!-- Name -->
         <label class="item item-input">
-            <input class="item item-input" type="name" ng-model="$parent.register.Name" placeholder="Name">
-        </label>
+             <input class="item item-input" type="text" ng-model="$parent.register.Name" placeholder="Name">
+         </label>
         <!-- Email-->
          <label class="item item-input">
              <input class="item item-input" type="email" ng-model="$parent.register.username" placeholder="E-Mail">
@@ -20,7 +20,7 @@
         </label>
         <!-- Chapter -->
         <label class="item item-input">
-            <input class="item item-input" type="name" ng-model="$parent.register.chapter_name" placeholder="Chapter">
+            <input class="item item-input" type="text" ng-model="$parent.register.chapter_name" placeholder="Chapter">
         </label>
         <!-- Password -->
         <label class="item item-input">
@@ -34,8 +34,10 @@
         Are you a minor?
         <input type="checkbox" value="Bike">Yes      <input type="checkbox" value="Bike">No
         <!-- Terms and Conditions Check -->
+<!--
         <div class="item item-text-wrap"> Terms and Conditions </div>
         <input style="width:100px; height:20px;" type="radio" ng-model="Bike" value="yes"/>I agree to the terms and conditions above.
+-->
 
         <!-- if form is invalid ng-submit will handle it -->
         <button type="submit" ng-submit="registerUser()" class="button button-block button-dark submit">Submit</button>
