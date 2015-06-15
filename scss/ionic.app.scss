@@ -25,6 +25,16 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 // Include all of Ionic
 @import "www/bower_components/ionic/scss/ionic";
+textarea, input[type="name"], input[type="chapter"], input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"] {
+  display: block;
+  padding-top: 2px;
+  padding-left: 0;
+  height: 34px;
+  color: #111;
+  vertical-align: middle;
+  font-size: 14px;
+  line-height: 16px;
+}
 ion-header-bar.bar-dark.bar-subheader.bar.bar-header.disable-user-behavior>label>input {
 	background-color: transparent;
 }
