@@ -94,7 +94,6 @@ vmaControllerModule.controller('registerCtrl', ['$scope', '$state', 'Auth', 'ngN
         }
     }
     $scope.bike = function() {
-        console.log("bike");
     }
 }]);
 

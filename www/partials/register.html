@@ -5,7 +5,7 @@
 
  <ion-content>
  <div class="container-fluid">
-    <form class="list" name="registerform">
+    <form class="list" name="registerform" ng-submit="registerUser()">
         <!-- Name -->
         <label class="item item-input">
              <input class="item item-input" type="text" ng-model="$parent.register.Name" placeholder="NAME">
@@ -40,7 +40,7 @@
 -->
 
         <!-- if form is invalid ng-submit will handle it -->
-        <button type="submit" ng-submit="registerUser()" class="button button-block button-positive">Submit</button>
+        <button type="submit" class="button button-block button-positive">Submit</button>
     </form>
 </div>
 </ion-content>
