@@ -1,4 +1,4 @@
-<ion-view title="My Joined Groups">
+<ion-view title="My Joined Build Sites">
 <ion-content>
 <ion-nav-buttons side='right'>
     <button class="button button-dark" ng-click="addGroup()"> <i class="icon ion-plus-round"> </i> </button>
@@ -16,7 +16,7 @@
 <div class="item" ng-show="groups.length > 0">
     <center>
 <!--            There <span ng-hide="groups.length >=2">is </span><span ng-hide="groups.length <2">are</span> {{groups.length}} build site<span ng-hide="groups.length <2">s</span> in your chapter.-->
-                   {{groups.length}} Group<span ng-hide="groups.length <2">s</span>
+                   {{groups.length}} Build Site<span ng-hide="groups.length <2">s</span>
     </center>
 </div>
 <div class="list card" ng-repeat="group in groups">
