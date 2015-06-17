@@ -13,8 +13,8 @@
 <ion-list class="list">
     <div class="item" ng-show="groups.length == 0 || groups === undefined">
         <center>
-            No chapters in organization... <br/>
-            Add a chapter?
+            No build dates in organization... <br/>
+            Add a build date?
         </center>
     </div>
     <div  ng-repeat="group in groups | filter:{name: query} | orderBy:orderProp" class="item item-button-right">
