@@ -1,3 +1,4 @@
+
 <ion-view title="Build Dates">
 <ion-content>
     <ion-nav-buttons side='right'>
@@ -14,7 +15,7 @@
     <div class="list">
         <div class="item" ng-show="checkInTimeDisplay"> Checked in at: {{checkInTimeDisplay}}</div>
         <label class="item item-input item-select">
-            <div class="input-label"> Task Name </div>
+            <div class="input-label"> Build Date </div>
             <select ng-model="entry.name" required>
                 <option>Choose a task</option>
                 <option ng-repeat="task in joinTasks">{{task.name}}</option>
@@ -23,7 +24,7 @@
         </label>
         <label ng-hide="entry.name == 'Choose a task'">
             <label ng-show="entry.name == 'Other'" class="item item-input">
-                <span class="input-label">Task Name</span>
+                <span class="input-label">Build Date</span>
                 <input type="text" ng-model="entry.customName" placeholder="Enter task"/>
             </label>
             <label class="item item-input" ng-click="openDatePicker()">
