@@ -3,49 +3,73 @@
     <button class="button button-icon button-clear" ui-sref="login"><i class="icon ion-ios7-arrow-back"></i></button>
 </ion-nav-bar>
 
- <ion-content>
- <div class="container-fluid">
+<ion-content>
+  <div class="list">
     <form class="list" name="registerform" ng-submit="registerUser()">
-        <!-- Name -->
-        <label class="item item-input">
-             <input class="item item-input" type="text" ng-model="$parent.register.Name" placeholder="NAME">
-         </label>
-        <!-- Email-->
-         <label class="item item-input">
-             <input class="item item-input" type="email" ng-model="$parent.register.username" placeholder="E-MAIL">
-         </label>
-        <!-- Phone number -->
-        <label class="item item-input">
-            <input class="item item-input" type="number" ng-model="$parent.register.phoneNumber" placeholder="PHONE NUMBER">
-        </label>
-        <!-- Chapter -->
-        <label class="item item-input item-select">
-            <div style="color:DarkGray "class="input-label"> Chapter </div>
-            <select>
+      <!-- Name -->
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Name</span>
+        <input type="text" ng-model="$parent.register.Name" placeholder="Jane Doe">
+      </label>
+
+      <!-- Email Address -->
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Email Address</span>
+        <input type="email" ng-model="$parent.register.username" placeholder="janedoe@example.com">
+      </label>
+
+      <!-- Phone Number -->
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Phone Number</span>
+        <input type="number" ng-model="$parent.register.phoneNumber" placeholder="1231231233">
+      </label>
+
+      <!-- Chapter -->
+      <label class="item item-input item-select">
+        <div class="input-label"> Chapter </div>
+          <select>
                 <option>example 1</option>
                 <option>example 2</option>
                 <option>example 3</option>
-            </select>
-        </label>
-        <!-- Password -->
-        <label class="item item-input">
-            <input class="item item-input" type="password" ng-model="$parent.password.password" placeholder="PASSWORD">
-        </label>
-        <!-- Password Confirmation-->
-         <label class="item item-input">
-             <input class="item item-input" type="password" ng-model="$parent.confirm.password" placeholder="CONFIRM PASSWORD">
-         </label>
-         <!-- Ask if user is a minor -->
-        Are you a minor?
-        <input type="checkbox" value="Bike">Yes      <input type="checkbox" value="Bike">No
-        <!-- Terms and Conditions Check -->
-<!--
-        <div class="item item-text-wrap"> Terms and Conditions </div>
-        <input style="width:100px; height:20px;" type="radio" ng-model="Bike" value="yes"/>I agree to the terms and conditions above.
--->
+          </select>
+      </label>
 
-        <!-- if form is invalid ng-submit will handle it -->
-        <button type="submit" class="button button-block button-positive">Submit</button>
+      <!-- Type of Volunteer -->
+      <label class="item item-input item-select">
+        <div class="input-label"> Type of Volunteer </div>
+          <select>
+              <option>Member</option>
+              <option>Individual</option>
+          </select>
+      </label>
+
+      <!-- Password -->
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Password</span>
+        <input type="text" ng-model="$parent.password.password">
+      </label>
+
+      <!-- Confirm Password -->
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Password</span>
+        <input type="text" ng-model="$parent.confirm.password">
+      </label>
+
+      <!-- Ask if user is a minor -->
+      <label class="item item-input item-select">
+        <div class="input-label"> Are you a minor? </div>
+          <select>
+              <option>Yes</option>
+              <option>No</option>
+          </select>
+      </label>
+
+      <!-- Terms and Conditions Check
+      <div class="item item-text-wrap"> Terms and Conditions </div>
+      <input style="width:100px; height:20px;" type="radio" ng-model="Bike" value="yes"/>I agree to the terms and conditions above. -->
+
+      <!-- if form is invalid ng-submit will handle it -->
+      <button type="submit" class="button button-block button-dark">Submit</button>
     </form>
-</div>
+  </div>
 </ion-content>

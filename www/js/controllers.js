@@ -1378,9 +1378,9 @@ vmaControllerModule.controller('hoursController', ['$scope', '$state', '$statePa
     $scope.update();
 
     $scope.entry = [];
-    $scope.entry.name = "Choose a task";
+    $scope.entry.name = "Choose a build date";
     $scope.ok = function() {
-        if ($scope.entry.name == "Choose a task") {ngNotify.set("Please choose a task", "error");}
+        if ($scope.entry.name == "Choose a build date") {ngNotify.set("Please choose a build date", "error");}
         else {
             if($scope.entry.name != "Other") {
             var taskSelected = $filter('getByName')($scope.joinTasks, $scope.entry.name);
