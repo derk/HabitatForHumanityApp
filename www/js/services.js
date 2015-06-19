@@ -1,6 +1,258 @@
 'use strict';
 
 var vmaServices = angular.module('vmaServicesModule', ['restangular']);
+//vmaServices.factory('vmaChapterService', ['Restangular', '$q', '$filter', function(Restangular, $q, $filter){
+//    var allChapters =;
+//    var manChapters =;
+//    var memChapters =;
+//    var subChapters;
+//    var metaChapters;
+//    var promAllChapters;
+//    var updating;
+//    return{
+//        updateChapter:
+//        //ACCESS UPDATE
+//        function(update){
+//            if(update || ((!allChapters || !manChapters || !memChapters) && !updating)) {
+//                updating = true;
+//                var gProm = Restangular.all("chapters").one("byMembership").getList();
+//                gProm.then(function(success){
+//                    success = Restangular.stripRestangular(success);
+//                    localStorage.setObject("memChapters", success);
+//                    memChapters = success;
+//                }, function(fail){
+//                    
+//                });
+//            var gPromMaster = Restangular.all("chapters").getList();
+//                    gPromMaster.then(function(success) {
+//                        success = Restangular.stripRestangular(success);
+//                        localStorage.setObject("allChapters", success);
+//                        allChapters = success;
+//                    }, function(fail) {
+//            //            console.log(fail);
+//                    });
+//                    promAllChapters = $q.all([gProm, gPromByMan, gPromMaster]).then(function() {updating = false;});
+//                    return promAllChapters;
+//                } else if (updating){
+//                    return promAllChapters;
+//                } else {
+//                    var defer = $q.defer();
+//                    defer.resolve("DONE");
+//                    return defer.promise;
+//                }
+//            },
+//        getAllChapters:
+//            function() {
+//                return this.updateChapters().then(function(success) { return allChapters; });
+//            },
+//        getManChapters:
+//            function() {
+//                return this.updateChapters().then(function(success) { return manChapters; });
+//            },
+//        getMemChapters:
+//            function() {
+//                return this.updateChapters().then(function(success) { return memChapters; });
+//            },
+//        getSubtractedChapters:
+//            function(update) {
+//                return this.updateChapters(update).then(function(success) {
+//                    var assignedChaptersIds = {};
+//                    var chaptersIds = {};
+//                    var result = [];
+//
+//                    var assignedChapters = manChapters.concat(memChapters);
+//                    var chapters = allChapters;
+//
+//                    assignedChapters.forEach(function (el, i) {
+//                        assignedChaptersIds[el.id] = assignedChapters[i];
+//                    });
+//
+//                    chapters.forEach(function (el, i) {
+//                        chaptersIds[el.id] = chapters[i];
+//                    });
+//
+//                    for (var i in chaptersIds) {
+//                        if (!assignedChaptersIds.hasOwnProperty(i)) {
+//                            result.push(chaptersIds[i]);
+//                        }
+//                    }
+//                    subChapters = result;
+//                    return result;
+//                });
+//            },
+//        getMetaChapters:
+//            function(update) {
+//                return this.getSubtractedChapters(update).then(function(success) {
+//                    var result = [];
+//                    subChapters.forEach(function(obj){
+//                        obj.isChapters = true;
+//                        result.push(obj);
+//                    });
+//                    memChapters.forEach(function(obj){
+//                        obj.isMember = true;
+//                        result.push(obj);
+//                    });
+//                    manChapters.forEach(function(obj){
+//                        obj.isManager = true;
+//                        result.push(obj);
+//                    });
+//                    metaChapters = result;
+//                    return result;
+//                });
+//            },
+//        getMetaJoinedChapters:
+//            function(update) {
+//                return this.getSubtractedChapters(update).then(function(success) {
+//                    var result = [];
+//                    manChapters.forEach(function(obj){
+//                        obj.isManager = true;
+//                        result.push(obj);
+//                    });
+//                    memChapters.forEach(function(obj){
+//                        obj.isMember = true;
+//                        result.push(obj);
+//                    });
+//                    metaChapters = result;
+//                    return result;
+//                });
+//            },
+//        getChapter:
+//            function(chapter_id) {
+//                return this.updateChapters().then(function(success) {
+//                    var chapter = $filter('getById')(allChapters, chapter_id);
+//                    return chapter;
+//                });
+//            },
+//        getChapterMeta:
+//            function(chapter_id, update) {
+//                return this.getMetaChapters(update).then(function(success) {
+//                    var chapter = $filter('getById')(success, chapter_id);
+//                    if($filter('getById')(memChapters.concat(manChapters), chapter_id)) {
+//                        chapter.joined = true;
+//                    } else {
+//                        chapter.joined = false;
+//                    }
+//                    return chapter;
+//                });
+//            },
+//        addChapter:
+//            function(chapter) {
+//                console.log(chapter);
+//                return Restangular.all("chapters").post(chapter).then(function(success){
+//                    //var newGroup = {};
+//                    //newGroup.id = eval(success);
+//                    //newGroup.name = group.name;
+//                    //newGroup.description = group.description;
+//                    chapter.id = eval(success);
+//                    allChapters.unshift(angular.copy(chapter));
+//                    manChapters.unshift(angular.copy(chapter));
+//                });
+//            },
+//        editChapter:
+//            function(id, chapter) {
+//                return Restangular.all("chapters").all(id).post({name: chapter.name, description:Chapter.description}).then(function(s){
+//                    for(var i = 0; i < allChapters.length; i++) {
+//                        if(allChapters[i].id == id) {
+//                            console.log(id);
+//                            allChapters[i] = angular.copy(chapter);
+//                            break;
+//                        }
+//                    }
+//                    for(var i = 0; i < manChapters.length; i++) {
+//                        if(manChapters[i].id == id) {
+//                            console.log(id);
+//                            manChapters[i] = angular.copy(chapter);
+//                            break;
+//                        }
+//                    }
+//                    for(var i = 0; i < memChapters.length; i++) {
+//                        if(memChapters[i].id == id) {
+//                            console.log(id);
+//                            memChapters[i] = angular.copy(chapter);
+//                            break;
+//                        }
+//                    }
+//                });
+//            },
+//        deleteChapter:
+//            function(gid) {
+//                return Restangular.all("chapters").all(gid).remove().then(function(success){
+//                    for(var i = 0; i < allChapters.length; i++) {
+//                        if(allChapters[i].id == gid) {
+//                            allChapters.splice(i, 1);
+//                            break;
+//                        }
+//                    }
+//                    for(var i = 0; i < manChapters.length; i++) {
+//                        if(manChapters[i].id == gid) {
+//                            manChapters.splice(i, 1);
+//                            break;
+//                        }
+//                    }
+//                    for(var i = 0; i < memChapters.length; i++) {
+//                        if(memChapters[i].id == gid) {
+//                            memChapters.splice(i, 1);
+//                            break;
+//                        }
+//                    }
+//                    return success;
+//                });
+//            },
+//        joinChapter:
+//            function(gid, uid) {
+//                return Restangular.all("chapters").all(gid).all("MEMBER").all(uid).post().then(function(s){
+//                    for(var i = 0; i < allChapters.length; i++) {
+//                        if(allChapters[i].id == gid) {
+//                            var chapter = $filter('getById')(memChapters, allChapters[i].gid);
+//                            if(!chapter) {
+//                                console.log("PUSH");
+//                                memChapters.push(allChapters[i]);
+//                            }
+//                            break;
+//                        }
+//                    }
+//                });
+//            },
+//        isManager:
+//            function(gid) {
+//                return this.getManChapters().then(function(success) {
+//                    var chapter = $filter('getById')(manChapters, gid);
+//                    if(chapter) return true; else return false;
+//                }, function(fail) {
+//                    //asdf
+//                });
+//            },
+//        leaveChaptersManager:
+//            function(gid, uid) {
+//                 return Restangular.all("chapters").all(gid).all("MANAGER").all(uid).remove().then(function(success) {});
+//            },
+//        leaveChaptersMember:
+//            function(gid, uid) {
+//                return this.leaveChapterManager(gid, uid).then(function(success) {
+//                    return Restangular.all("chapters").all(gid).all("MEMBER").all(uid).remove().then(function(success) {}).then(function(s){
+//                        for(var i = 0; i < memChapters.length; i++) {
+//                            if(memChapters[i].id == gid) {
+//                                memChapters.splice(i, 1);
+//                                break;
+//                            }
+//                        }
+//                        for(var i = 0; i < manChapters.length; i++) {
+//                            if(manChapters[i].id == gid) {
+//                                manChapters.splice(i, 1);
+//                                break;
+//                            }
+//                        }
+//                    });
+//                });
+//            }
+//    }
+//    
+//    
+//    
+//    
+//    
+//    }]);
+
 vmaServices.factory('vmaUserService', ['Restangular', '$q', '$filter', function(Restangular, $q, $filter) {
     var allUsers;
     var promAllUsers;
