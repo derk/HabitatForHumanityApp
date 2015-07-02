@@ -172,6 +172,15 @@ config(function($stateProvider, $urlRouterProvider, $compileProvider, Restangula
           },
           authenticate: true
       }).
+      state('intro',{
+                url:"/intro",
+                views:{
+                    "app_home":{
+                        templateUrl:"partials/intro.html",
+                        controller:"introCtrl"
+                    }
+                }
+      }).
       state('secure.userPicture', {
           url: "/userPicture",
           views: {

@@ -1,1 +1,48 @@
-<!-- intro slides -->
+
+<ion-view title="Introduction/Tutorial page">
+<ion-nav-bar class="bar-dark">
+    <button class="button button-icon button-clear" ui-sref="login"><i class="icon ion-ios7-arrow-back"></i></button>
+</ion-nav-bar>
+
+<ion-content>
+    <ion-nav-buttons side="left">
+    <button class="button button-positive button-clear no-animation"
+            ng-click="startApp()" ng-show="!slideIndex" style="color:white">
+      Skip Intro
+    </button>
+    <button class="button button-positive button-clear no-animation"
+            ng-click="previous()" ng-show="slideIndex > 0" style="color:white" >
+      Previous Slide
+    </button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right"> 
+    <button class="button button-positive button-clear no-animation"
+            ng-click="next()" ng-show="slideIndex != 5" style="color:white">
+      Next
+    </button>
+    <button class="button button-positive button-clear no-animation"
+            ng-click="startApp()" ng-show="slideIndex == 5" style="color:white">
+      Start using Public Art
+    </button>
+  </ion-nav-buttons>
+  <ion-slide-box on-slide-changed="slideChanged(index)">
+    <ion-slide>
+       <img src="http://i.imgur.com/B891qPv.jpg" alt="Main Page" style="max-width:99%; max-height:80%">       
+    </ion-slide>
+    <ion-slide>
+       <img src="http://i.imgur.com/B891qPv.jpg" alt="AR Mode Page" style="max-width:99%; max-height:80%">       
+    </ion-slide>
+    <ion-slide>
+       <img src="http://i.imgur.com/B891qPv.jpg" alt="Map Page" style="max-width:99%; max-height:80%">      
+    </ion-slide>
+    <ion-slide>  
+       <img src="http://i.imgur.com/B891qPv.jpg" alt="Menu Page" style="max-width:99%; max-height:80%">     
+    </ion-slide>
+    <ion-slide> 
+       <img src="http://i.imgur.com/B891qPv.jpg" alt="Help Page" style="max-width:99%; max-height:80%">      
+    </ion-slide>
+    <ion-slide>      
+    </ion-slide>  
+  </ion-slide-box>
+  
+</ion-content>

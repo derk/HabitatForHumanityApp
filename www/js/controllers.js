@@ -1499,6 +1499,29 @@ vmaControllerModule.controller('hoursController', ['$scope', '$state', '$statePa
     };
 }]);
 
+vmaControllerModule.controller('introCtrl', ['$rootScope','$scope','$state', '$ionicSlideBoxDelegate','$ionicSideMenuDelegate',
+    function($rootScope, $scope, $state, $ionicSlideBoxDelegate,$ionicSideMenuDelegate) {
+        
+        $ionicSideMenuDelegate.$getByHandle('main-menu').canDragContent(false);
+        
+        $rootScope.curState = $state.current.name;
+        $rootScope.prevState = $rootScope.curState;
+        // Called to navigate to the main app
+        $scope.startApp = function() {
+            $state.go('secure.cfeed');
+        };
+        $scope.next = function() {
+            $ionicSlideBoxDelegate.next();
+        };
+        $scope.previous = function() {
+            $ionicSlideBoxDelegate.previous();
+        };
+        // Called each time the slide changes
+        $scope.slideChanged = function(index) {
+            $scope.slideIndex = index;
+        };
+}]);
+
 vmaControllerModule.controller('awards', ['$scope', 'tasks', function ($scope, tasks) {
 //    PULL THIS IN FROM USER_DATA
     $scope.badges = [
