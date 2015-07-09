@@ -1,4 +1,4 @@
-Volunteer Management Application
+Habitat For Humanity Application
 ==========
 
 The code is based on the Ionic Framework.
